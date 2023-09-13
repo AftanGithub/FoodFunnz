@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <script src="https://kit.fontawesome.com/005de95050.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <section class="login__wrapper">
+            <div class="login__left">
+                <div class="login__logoWrapper">
+                   <a href="./index.html"> <img src="./assets/logo.png"/></a>
+                    <h3>Food & Funzz</h3>
+                </div>
+                <h2>Discover Food & Funzz: Where Taste Meets Entertainment!</h2>
+                <p>Savor exquisite flavors, enjoy vibrant ambiance, and experience entertainment like never before at Food & Funzz. Join us for unforgettable moments that combine the best of culinary artistry and entertainment excitement.</p>
+            </div>
+            <div class="login__formWrapper">
+                <h2>Welcome Back!</h2>
+                <form>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email address</label>
+                        <input placeholder="e.g. john@gmail.com" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                        
+                      
+                     
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <div class="input-group mb-3">
+                        <input type="password" class="form-control" id="password" aria-describedby="password-addon">
+                        <span style="cursor: pointer;" class="input-group-text" onclick="handleTogglePassword()" id="password-addon"><i class="fa-regular fa-eye-slash"></i></span>
+                      </div>
+                     
+                      
+                    </div>
+                   <div class="mb-3 text-center">
+                    <small class="form-text">New Member? <a href='./register.html' class="primaryText">Register Here</a></small>
+                   </div>
+                   
+                    <button type="button" onclick="handleLogin()" class="primaryBtn">Login</button>
+                  </form>
+            </div>
+    </section>
+    
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="liveToast" class="toast" data-bs-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            
+          <strong class="me-auto" id="toastTitle"></strong>
+          <button type="button" id="toastCloseBtn" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toastBody">
+          
+        </div>
+      </div>
+    </div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<script src="./script/global.js"></script>
+<script src="./script/login.js"></script>
+</body>
+</html>

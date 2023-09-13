@@ -1,0 +1,35 @@
+.aboutBg{
+    background-image: linear-gradient(rgba(20, 20, 20, 0.753), rgba(20, 20, 20, 0.671)),url('../assets/aboutBg.jpg');
+    background-position: center;
+}
+
+
+.about__infoWrapper{
+    display: flex;
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.about__infoWrapper img{
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.about__infoWrapper p{
+    color: gray;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.about__infoText{
+    padding: 1rem;
+    width: 50%;
+}
+
+.about__infoText h2{
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,110 @@
+.contact__us{
+    padding: 3rem 2rem;
+    min-height: 30vh;
+    background-image: linear-gradient(rgba(20, 20, 20, 0.753), rgba(20, 20, 20, 0.671)),url('../assets/contactBg.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.contact__us h1{
+    font-size: 4rem;
+   
+}
+
+.contact__info{
+    padding: 3rem;
+}
+
+.contact__info h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+.contactWrapper{
+    display: flex;
+}
+
+.contactItemCard{
+    width: 30%;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 1rem;
+    text-align: center;
+
+}
+
+.contactItemCard i{
+    font-size: 3rem;
+    background-color: var(--primary);
+    border-radius: 100px;
+    width: fit-content;
+    color: white;
+    padding: 20px;
+
+}
+
+.contactItemCard h3{
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contactItemCard p{
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.feedback__section{
+    padding: 2rem;
+    background-color: whitesmoke;
+
+}
+
+.feedback__section h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.feedback__section .form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback__section form{
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 70%;
+}
+
+.feedback__section textarea{
+    min-height: 200px;
+}
+
+.feedback__section label[for="rating"]{
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .contactWrapper{
+        flex-direction: column;
+    }
+
+    .contactItemCard{
+        margin: 1rem;
+        width: 90%;
+    }
+
+}

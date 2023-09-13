@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Food & Funzz</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <script src="https://kit.fontawesome.com/005de95050.js" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./index.html">
+                <div class="logo__wrapper">
+                    <img src="./assets/logo.png" />
+                    <h3>Food & Funzz</h3>
+                   
+                </div>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" >
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./menu.html">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">Contact</a>
+                  </li>
+                 
+                
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0" id="navListWrapper">
+
+                </ul>
+              
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+      <section class="dashboard__section">
+        <div class="dashboard__menu d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" id="dashboardMenu" >
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+           
+            <span class="fs-4" id="userGreetInfo"></span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="./user-dashboard.html" class="nav-link text-white" aria-current="page">
+                <i class="fa-solid fa-gauge"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+                <a href="./food-items.html" class="nav-link  active">
+                    <i class="fa-solid fa-utensils"></i>
+                  Food Items
+                </a>
+              </li>
+             
+
+            <li>
+              <a href="./admin-orders.html" class="nav-link text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Orders
+              </a>
+            </li>
+
+            <li>
+              <a href="./feedback.html" class="nav-link text-white">
+                  <i class="fa-regular fa-comment"></i>
+                Feedback
+              </a>
+            </li>
+           
+          
+          </ul>
+         
+         
+        </div>
+        <div class="dashboard__expand">
+          <i class="fa-solid fa-border-all" title="Toggle Menu?" onclick="toggleDashboardMenu()"></i>
+        </div>
+        <div class="dashboard__content">
+          
+            <div id="foodListWrapper">
+                <div class="dashboard__header">
+                    <h2>Food Items</h2>
+                    <div class="search__input">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input type="search" oninput="handleSearchFood(event)" placeholder="Search Your food here..." />
+                    </div>
+                    <button type="button" class="primaryBtn" onclick="showFoodCreateForm()">Create New</button>
+                </div>
+                <hr/>
+                <div class="row row-cols-1 row-cols-md-2 g-4" id="food__cards">
+
+                </div>
+            </div>
+            <div class="food__create__form" id="foodCreateWrapper">
+                <div class="dashboard__header">
+                    <h2>Create New Food Item</h2>
+                    <button type="button" class="primaryBtn" onclick="hideFoodCreateForm()">Go Back</button>
+                </div>
+                <hr/>
+                <div class="food__formWrapper">
+                    <form onsubmit="handleCreateFoodItems();return false;">
+                        <div class="mb-3">
+                            <label for="foodName" class="form-label">Food Title</label>
+                            <div class="input-group mb-3">
+                              <input required type="text" placeholder="e.g. Italian Pasta" class="form-control" id="foodName">
+                            
+                            </div>
+                           
+                            
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-md-4 col-sm-12">
+                                <label for="foodName" class="form-label">Food Price</label>
+                                <div class="input-group mb-3">
+                                  <input required type="number" placeholder="e.g. 30" class="form-control" id="foodPrice">
+                                </div>
+                               
+                              </div>
+                            <div class="col-md-4 col-sm-12">
+                                <label for="foodCategory" class="form-label">Food Category</label>
+                                <select required class="form-select" id="foodCategory" aria-label="category">
+                                    <option value="Breakfast" selected>Breakfast</option>
+                                    <option value="Lunch">Lunch</option>
+                                    <option value="Dinner">Dinner</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <label for="foodCuisine" class="form-label">Food Cuisine</label>
+                                <input type="text" placeholder="e.g. Chinese" class="form-control" id="foodCuisine">
+
+                            </div>
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="foodDescription" class="form-label">Food Description</label>
+                            <textarea required class="form-control" id="foodDescription"></textarea>
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="foodImg" class="form-label">Food Image</label>
+                            <input type="file" required  class="form-control" id="foodImg"/>
+                          </div>
+                          <div class="mb-3">
+                            <button id="foodBtn" type="submit" class="primaryBtn">Create</button>
+                          </div>
+
+                         
+                    </form>
+                </div>
+            </div>
+
+            <div class="food__create__form" id="foodUpdateWrapper">
+              <div class="dashboard__header">
+                  <h2>Update <span  id="updatedFormTitle">Food Item</span></h2>
+                  <button type="button" class="primaryBtn" onclick="hideFoodUpdateForm()">Go Back</button>
+              </div>
+              <hr/>
+              <div class="food__formWrapper">
+                  <form onsubmit="handleUpdateFoodItems();return false;">
+                      <div class="mb-3">
+                          <label for="updatedfoodName" class="form-label">Food Title</label>
+                          <div class="input-group mb-3">
+                            <input required type="text" placeholder="e.g. Italian Pasta" class="form-control" id="updatedfoodName">
+                          
+                          </div>
+                         
+                          
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-4 col-sm-12">
+                              <label for="updatedfoodPrice" class="form-label">Food Price</label>
+                              <div class="input-group mb-3">
+                                <input required type="number" placeholder="e.g. 30" class="form-control" id="updatedfoodPrice">
+                              </div>
+                             
+                            </div>
+                          <div class="col-md-4 col-sm-12">
+                              <label for="updatedfoodCategory" class="form-label">Food Category</label>
+                              <select required class="form-select" id="updatedfoodCategory" aria-label="category">
+                                  <option value="Breakfast" selected>Breakfast</option>
+                                  <option value="Lunch">Lunch</option>
+                                  <option value="Dinner">Dinner</option>
+                              </select>
+                          </div>
+                          <div class="col-md-4 col-sm-12">
+                              <label for="updatedfoodCuisine" class="form-label">Food Cuisine</label>
+                              <input type="text" placeholder="e.g. Chinese" class="form-control" id="updatedfoodCuisine">
+
+                          </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="updatedfoodDescription" class="form-label">Food Description</label>
+                          <textarea required class="form-control" id="updatedfoodDescription"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="updatedfoodImg" class="form-label">Food Image</label>
+                          <input type="file"  class="form-control" id="updatedfoodImg"/>
+                        </div>
+                        <div class="mb-3">
+                          <button id="updatedfoodBtn" type="submit" class="primaryBtn">Update</button>
+                        </div>
+
+                       
+                  </form>
+              </div>
+          </div>
+            
+        </div>
+    
+  
+    </section>
+    </main>
+   
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast" data-bs-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+              
+            <strong class="me-auto" id="toastTitle"></strong>
+            <button type="button" id="toastCloseBtn" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body" id="toastBody">
+            
+          </div>
+        </div>
+      </div>
+ 
+<script src="./script/global.js"></script>
+<script src="./script/dashboard.js"></script>
+<script src="./script/food-items.js"></script>
+</body>
+</html>

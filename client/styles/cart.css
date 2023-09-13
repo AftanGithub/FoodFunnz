@@ -1,0 +1,25 @@
+.cart__wrapper{
+    margin-top: 100px;
+    padding: 2rem;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.cart__body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cart__itemsWrapper{
+    width: 70%;
+    border-right: 1px solid lightgray;
+}
+
+.cart__checkout{
+    width: 28%;
+    
+}
+

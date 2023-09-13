@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Funzz - A World of Taste and Memories</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/checkout.css">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/png">
+    <script src="https://kit.fontawesome.com/005de95050.js" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast" data-bs-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+              
+            <strong class="me-auto" id="toastTitle"></strong>
+            <button type="button" id="toastCloseBtn" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body" id="toastBody">
+            
+          </div>
+        </div>
+      </div>
+
+
+    <section class="checkout__wrapper"> 
+     
+        <div class="checkout__left">
+            <a href="./index.html" class="d-flex align-items-center">
+               
+                <img src="./assets/logo.png" alt="logo" />
+                <h3 class="mr-2">Food & Funzz</h3>
+                
+            </a>
+            <div class="card p-3 text-center" id="payAmountCard">
+                    
+                    
+            </div>
+
+        </div>
+
+        <div class="checkout__right">
+          <div id="msgCardWrapper" class="card p-3  shadow-sm hidden">
+            <div class="d-flex m-2 mt-4 flex-column justify-content-center align-items-center">
+              <img id="resultImg" src="./assets/check.png" style="width: 150px;"/>
+              <h4 id="payment-message"></h4>
+              <a href="./user-dashboard.html" class="primaryBtn">Go To Dashboard</a>
+            </div>
+          
+          </div>
+           <div id="paymentFormWrapper">
+            <h2 class="text-center">Payment Form</h2>
+            <br/>
+            <br/>
+            <form id="payment-form">
+                <div id="link-authentication-element">
+                  <!--Stripe.js injects the Link Authentication Element-->
+                </div>
+                <div id="shipping-element">
+
+                </div>
+                <div id="payment-element">
+                  <!--Stripe.js injects the Payment Element-->
+                </div>
+
+                <button id="submit">
+                  <div class="spinner hidden" id="spinner"></div>
+                  <span id="button-text">Pay now</span>
+                </button>
+               
+             
+               
+              </form>
+           </div>
+        </div>
+       
+
+    </section>
+
+
+
+
+
+  
+      
+      <script src="./script/global.js"></script>
+    
+      <script src="./script/checkout.js"></script>
+
+</body>
+</html>

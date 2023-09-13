@@ -1,0 +1,88 @@
+.login__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login__left{
+    width: 45%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: linear-gradient(rgba(20, 20, 20, 0.753), rgba(20, 20, 20, 0.671)),url('../assets/loginBg.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+.login__logoWrapper{
+    display: flex;
+    align-items: flex-end;
+}
+
+.login__logoWrapper img{
+    width: 80px;
+}
+
+.login__left h2{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.login__left p{
+    font-size: 14px;
+    line-height: 22px;
+    color: rgb(216, 214, 214);
+}
+
+.login__formWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 50%;
+}
+
+.login__formWrapper form{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 2rem;
+}
+
+.login__formWrapper h2{
+    font-size: 2.4rem;
+}
+
+.login__formWrapper .primaryBtn{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.registerBg{
+    background-image: linear-gradient(rgba(20, 20, 20, 0.753), rgba(20, 20, 20, 0.671)),url('../assets/registerBg.jpg');
+    background-position: center;
+}
+
+
+@media screen and (max-width: 600px) {
+    .login__wrapper{
+        flex-direction: column;
+    }
+
+    .login__left{
+       order: 2;
+       width: 100%;
+    }
+
+    .login__formWrapper{
+        order: 1;
+        width: 100%;
+    }
+
+}
